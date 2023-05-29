@@ -51,20 +51,35 @@ In diesem Talk möchten wir euch folgendes näher bringen...
 ## INTERLIS Validierung in QGIS
 
 <video controls="controls">
-<source src="assets/validator.mp4" type="video/mp4">
+<source src="assets/validator.webm" type="video/mp4">
 </video>
 
 <aside class="notes">
 In dem letzten zwei Jahren wurde der ilivalidator quasi vollintegriert in QGIS Model Baker.
-Das heisst, die Daten müssen nicht exportiert werden, sondern werden direkt im QGIS validiert.
+1. Die Daten müssen <b>nicht exportiert</b> werden, sondern werden direkt im QGIS validiert.
+2. Die <b>interaktive</b> Ergebnissliste kann helfen die Features zu <b>finden und fixen</b>.
 
 <b>Video:</b>
-- Die Datenquelle wird automatisch erkannt
-- Man kann die Daten anhand von Modell / Dataset / Behälter EINGRENZEN
-- Man kann auch ein Konfigurationsfile übergeben werden, dass mittels Meta Attributen einzelne <b>Checks ausschalten</b> kann oder Constraints mit besseren <b>Fehlermeldungen</b> beschreiben kann.
-- Die Resultate erscheinen in einer Liste, man kann sie durchgehen und wie in der <b>Attributtabelle</b> navigieren.
-- Man kann dann das <b>Formular öffnen</b>
-- Man kann dann zu den <b>Koordinaten zoomen</b> und mit den vorhandenen Tools die Geometrie "flicken".
+
+- Datenbank -> Model Baker -> Daten Validator
+- Die Datenquelle wird automatisch erkannt, auch wenn mehrere Datenquellen im QGIS Projekt sind.
+
+- Lassen wir ihn mal durchlaufen -> finden 12 Fehler: Geometrieüberschneidungen, falsch formatierte TID, Werte ausserhalb des Bereiches
+- Navigieren wir durch die Fehler. Aktivieren wir das Aufläuchten und zentrieren (wie in Attributtabelle)
+- Tatsächlich sind es nicht so viele Fehler in diesem Beispiel, dennoch schränken wir die Validierung noch etwas ein.
+  - Wählen wir nur den Basket für das Topic "Nature" anhand des Behälters
+  - Nun sind es noch 4 Fehler. Wollen wir uns um die Geometriefehler später kümmern, deaktivieren wir die Geometriechecks
+  - Noch ein Fehler
+- Wollen wir diesen fixen, wir öffnen das Formular 
+  - sehen dass es die t_ili_tid nicht gibt (wir könnten nun die Formularkonfiguration dieses Layers anpassen, machen wir aber nicht) 
+  - wir öffnen die Attributtabelle, gehen auf den Feldkalkulator und updaten das ensprechende Feld mit der Korrekten UUID
+- Schauen wir uns noch den Geometriefehler an, wir validieren nochmals und berücksichtigen Geometriechecks.
+  - Wir können auf die fehlerhaften Koordinaten zoomen und mit dem Stützpunkwerkzeug und der Hilfe des Snapping Tools, dies Fixen. Stützpunkteditor ist ebenfalls cool.
+- Wir können auch einzelne Constraints mit einem Konfigurationsfile ausschalten. 
+- Dazu validieren wir das andere Topic. 
+- Dann haben wir dieses File, haben von einzelnen Klassen und Attribute die constraints ausgeschaltet.
+- Wir lassen es durchlaufen - haben noch den einen Fehler. 
+- Dieser ist bereits benannt, dennoch können wir noch ein spezifischere Message hinzufügen.
 </aside>
 
 ---
