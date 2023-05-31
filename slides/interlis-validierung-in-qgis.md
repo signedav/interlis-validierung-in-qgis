@@ -30,19 +30,31 @@ Wir arbeiten in Schweizer Softwarebuden, die sich beide den Open Source Lösunge
 
 ---
 
-## Thema
+## Um was geht's
 
 <!-- Dave's stage -->
 
 - INTERLIS setzt **valide** Daten voraus
 - Daten können in QGIS **geflickt** werden
-- ...
+<br/>
+
+- Integration vom **ilivalidator** im **Model Baker**
+- Von was man **träumen** kann 😃
 
 <aside class="notes">
-In diesem Talk möchten wir euch folgendes näher bringen... 
-- Ein Hauptpfeiler des INTERLIS Ansatzes ist, dass die Daten <b>harmonisch</b> und <b>valide</b> sind.
-</aside>
+Ein Hauptpfeiler des INTERLIS Ansatzes ist, dass die Daten <b>harmonisch</b> und <b>valide</b> sind.
 
+In QGIS ist es möglich die Daten zu flicken.
+
+<i>Doch es ist etwas mühsam anhand eines Log-Files die einzelnen Features / Koordinaten zu finden</i>
+
+In dem letzten zwei Jahren wurde der ilivalidator quasi vollintegriert in QGIS Model Baker.
+1. Die Daten müssen <b>nicht exportiert</b> werden, sondern werden direkt im QGIS validiert.
+2. Die <b>interaktive</b> Ergebnissliste kann helfen die Features zu <b>finden und fixen</b>.
+3. Dazu eine Demo gleich
+
+Und danach noch einen kleinen Ausblick, von was man träumen könnte.
+</aside>
 
 ---
 
@@ -55,9 +67,6 @@ In diesem Talk möchten wir euch folgendes näher bringen...
 </video>
 
 <aside class="notes">
-In dem letzten zwei Jahren wurde der ilivalidator quasi vollintegriert in QGIS Model Baker.
-1. Die Daten müssen <b>nicht exportiert</b> werden, sondern werden direkt im QGIS validiert.
-2. Die <b>interaktive</b> Ergebnissliste kann helfen die Features zu <b>finden und fixen</b>.
 
 <b>Video:</b>
 
@@ -133,7 +142,8 @@ Problem, dass grosse Datensätze immer ganz validiert werden müssen. Es gibt di
 <aside class="notes">
 Es gibt mehrere Ansätze, wie dies in Model Baker integriert werden könnte. Sie <b>schliessen sich nicht aus</b>.
 
-1. Übergeben der OIDs aller selektierten Features. Auch möglich "Selektierte Features des aktuellen Layers"
+<b>Übergeben der OIDs aller selektierten Features. Auch möglich "Selektierte Features des aktuellen Layers"</b>
+
 <b>Pros</b>
 - Straightforeward und leicht verständliche Lösung.
 - Kann auch als Validierung des Layers (wenn alles selektiert ist) benutzt werden.
@@ -142,7 +152,7 @@ Es gibt mehrere Ansätze, wie dies in Model Baker integriert werden könnte. Sie
 - Man muss den Überblick über alle Selektionen behalten. Man muss evtl. durch alle Layer gehen und die Selektion überprüfen. Vielleicht wär auch noch eine Option "Deselect all on all layers" hilfreich.
 - Auch erfasst man vielleicht Features auf Kind-Layer, die dann mühsam zu finden sind für die Selektion. Ein automatisches Ermitteln und Hinzufügen von referenzierten Features aber kann zu Loops und grossen Datenmengen führen, weshalb darauf verzichtet wird.
 
-2. Aufzeichnung aller Features, die geändert wurden (ihre OIDs) - könnte auch automatisch starten.
+<b>Aufzeichnung aller Features, die geändert wurden (ihre OIDs) - könnte auch automatisch starten.</b>
 
 <b>Pros</b>
 - Es braucht keine manuelle Selektion.
