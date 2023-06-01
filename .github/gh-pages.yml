@@ -1,0 +1,46 @@
+name: gh-pages
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '30 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: (github.event_name == 'schedule' && github.repository == 'opengisch/talks_revealmd') || (github.event_name != 'schedule')
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build dependencies
+        run: |
+          pip install ghp-import
+
+      - name: Build
+        run: |
+          docker run --rm \
+            -v ${PWD}/slides:/slides \
+            -v ${PWD}/html:/html \
+            webpronl/reveal-md:latest \
+            /slides \
+            --static /html \
+            --assets-dir assets \
+            --static-dirs _assets/theme,assets
+
+      - name: Post-process to make it work on gh-pages
+        run: |
+          sudo chown -R ${USER}:${USER} html
+          git pull
+          find html -type f -name '*.html' -exec \
+            sed -i 's/"\/_assets\//".\/_assets\//g' {} \;
+          touch html/.nojekyll
+
+      - name: Push to gh-pages branches
+        run: ghp-import -p ${PWD}/html
+
