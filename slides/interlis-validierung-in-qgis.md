@@ -183,4 +183,4 @@ Je nach Menge muss auf die Performance geachtet werden. Evtl. braucht es einen z
 
 #### Web: www.geowerkstatt.ch / www.opengis.ch
 #### Emails: oliver.grimm@geowerkstatt.ch / david@opengis.ch 
-#### Social: @GrimmOliver / @signedav@techhub.social
+#### Social: @GrimmOliver / @signedav@fosstodon.org
