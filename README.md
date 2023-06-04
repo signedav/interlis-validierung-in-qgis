@@ -1,10 +1,16 @@
 # INTERLIS VALIDIERUNG IN QGIS
 
-Präsentation für den QGIS Anwender:innen Tag in Olten
+Präsentation für den QGIS Anwender:innen Tag in Olten.
+
+- Slides auf folgendem Link verfügbar: https://signedav.github.io/interlis-validierung-in-qgis/interlis-validierung-in-qgis.html#/
+- Mit `F11` maximieren Browserfenster maximieren.
+- Mit Taste `s` Speaker Notes öffnen.
+- Los geht's!
 
 ## Programm
 
 - Slides: Intro
+- Slides Um was gehts (Dave)
 - Film: INTERLIS Validierung in QGIS (Dave)
 - Slides: Was passiert im Backend mit ilivalidator (Oli)
 - Slides: Was könnte verbessert werden? (Dave)
