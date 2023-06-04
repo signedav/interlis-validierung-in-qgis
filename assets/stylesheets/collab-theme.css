@@ -50,3 +50,12 @@ div {
 li {
   margin-top: 0.5em !important;
 }
+
+body:before {
+  content: url(./geowerkstatt.png);
+  position: fixed;
+  bottom: -0.5em;
+  left: -6em;
+  z-index: -1;
+  opacity: 15%;
+}

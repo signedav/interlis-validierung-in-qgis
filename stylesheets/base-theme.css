@@ -44,15 +44,7 @@ body:after {
     bottom: -6em;
     right: -6em;
     z-index: -1;
-}
-
-body:before {
-    content: url(./geowerkstatt.png);
-    position: fixed;
-    bottom: -0.5em;
-    left: -6em;
-    z-index: -1;
-    opacity: 35%;
+    opacity: 50%
 }
 
 /* classes used for multiple columns */
