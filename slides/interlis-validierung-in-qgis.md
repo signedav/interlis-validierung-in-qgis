@@ -2,7 +2,7 @@
 title: INTERLIS VALIDIERUNG IN QGIS
 description: INTERLIS VALIDIERUNG IN QGIS
 theme: stylesheets/collab-theme.css
-customTheme: stylesheets/collab-theme
+customTheme: _assets/stylesheets/collab-theme
 transition: none
 revealOptions: {
   transition: 'none',
