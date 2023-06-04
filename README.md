@@ -2,7 +2,7 @@
 
 Präsentation für den QGIS Anwender:innen Tag in Olten.
 
-- Slides auf folgendem Link verfügbar: https://signedav.github.io/interlis-validierung-in-qgis/interlis-validierung-in-qgis.html#/
+- Slides auf folgendem Link verfügbar: https://signedav.github.io/interlis-validierung-in-qgis/interlis-validierung-in-qgis.html#/ (erstellt bei push auf `main`)
 - Mit `F11` maximieren Browserfenster maximieren.
 - Mit Taste `s` Speaker Notes öffnen.
 - Los geht's!
