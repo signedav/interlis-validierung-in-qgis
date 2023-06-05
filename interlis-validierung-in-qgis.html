@@ -146,10 +146,29 @@ Deshalb die Idee der Subset validierung.
 
 <!-- Oli's stage -->
 
+<aside class="notes">
+Ziele des Proof-Of-Concepts:
+- Validierung direkt bei der Speicherung der Layeränderungen und nur des Subsets.
+- Bildung des Subsets aus dem editierten Objekt und allen topologischen Nachbarn
+- Validierung des Subsets
+</aside>
+
 <video controls="controls">
 <source src="assets/poc.webm" type="video/mp4">
 </video>
 
+<aside class="notes">
+  
+Erkenntnisse:
+  
+- Prinzipiell ein funktionierendes Konzept: Zeitbedarf kann extrem reduziert werden > Ansatz in Produktionsumgebungen für aktuell validierten Datenbestand
+- Validierung der Attribut-Eigenschaften, Datentypen und MANDATORY CONSTRAINTS
+- Einschränkung des POC: 
+  - Keine Validierung der Objektreferenzen (da nicht sichergestellt werden kann, ob sie im Datenbestand oder nur im Subset fehlen (weil sie keine Nachbarn sind)
+  - Umgang mit Datensätzen aus nicht-geometrischen Klassen
+- Erweiterung des ilivalidators mit einem sog. Subset-Parameter (Array von Objekt-Identifikatoren (OID) o.ä.)   
+  
+</aside>
 </script></section><section  data-markdown><script type="text/template">
 ## Model Baker Frontend
 </br>
