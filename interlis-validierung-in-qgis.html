@@ -97,7 +97,7 @@ Und danach noch einen kleinen Ausblick, von was man träumen könnte.
 ## Was passiert im Backend?
 <aside class="notes">
 Am Backend überprüft der ilivalidator den Datensatz. Die QGIS-Daten liegen in einer Datenbank vor (PostGIS oder Geopackage) wobei das physische Schema durch ili2db erstellt wurde. Dadurch kennt sich der ilivalidator darin aus.
-  ![image](https://github.com/signedav/interlis-validierung-in-qgis/assets/3465512/a3e8891c-2e31-46d1-917c-77a306e79417)
+![ili2db](assets/ili2db_erd_sample.png) 
   
 - Der ilivalidator erkennt alle Merkmale des Modells wie Klassen, Attribute und Beziehungen zwischen den Klassen. Dadurch kann er die Daten gegen die INTERLIS-Regeln prüfen.
 - Die Prüfung geschieht typischerweise in 2 "runs": In Run#1 passiert die Prüfung Datensatz-für-Datensatz / in Run#2 prüft der ilivalidator dann Datensätze gegeneinander (zB. für Topologiechecks oder Objektbzeiehungen)
