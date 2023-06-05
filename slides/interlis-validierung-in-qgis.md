@@ -109,17 +109,21 @@ Und danach noch einen kleinen Ausblick, von was man träumen könnte.
 
   - Mächtigere **QGIS Tools**
   - **Vollintegration** der Constraints
-  - ...
+  - Validierung **stufenweise** ansteuern
   - Live (**Subset**) Validierung 
 
 <aside class="notes">
 Es gibt einige Ideen, wie man das nun <b>noch besser</b> machen könnte.
 
-QGIS Tools so zu verbessern: ZBs. der Topologiechecker - ersetzt aber INTERLIS Check nicht.
+QGIS Tools: ZBs. der Topologiechecker - ersetzt aber INTERLIS Check nicht.
 
-Integration der Constraints (herauslesen aus INTERLIS Compiler)
+Constraints: herauslesen aus INTERLIS Compiler.
 
-Problem, dass grosse Datensätze immer ganz validiert werden müssen. Es gibt die Möglichkeit von Behälter etc. aber die Daten können nicht immer einfach separiert werden. Deshalb die Idee der Subset validierung.
+Speed up mit ili2db `--singlePassValidation`. 
+
+Problem, dass grosse Datensätze immer ganz validiert werden müssen. Es gibt die Möglichkeit von Behälter etc. aber die Daten können nicht immer einfach separiert werden. 
+
+Deshalb die Idee der Subset validierung.
 
 </aside>
 
