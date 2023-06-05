@@ -35,12 +35,13 @@ Wir arbeiten in Schweizer Softwarebuden, die sich beide den Open Source Lösunge
 
 <!-- Dave's stage -->
 
-- INTERLIS setzt **valide** Daten voraus
-- Daten können in QGIS **geflickt** werden
-<br/>
+☑️ INTERLIS setzt **valide** Daten voraus
 
-- Integration vom **ilivalidator** im **Model Baker**
-- Von was man **träumen** kann 😃
+☑️ Daten können in QGIS **geflickt** werden
+
+➡️ Integration vom **ilivalidator** im **Model Baker**
+
+➡️ Von was man **träumen** kann
 
 <aside class="notes">
 Ein Hauptpfeiler des INTERLIS Ansatzes ist, dass die Daten <b>harmonisch</b> und <b>valide</b> sind.
