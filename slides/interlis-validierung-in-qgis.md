@@ -98,11 +98,23 @@ Und danach noch einen kleinen Ausblick, von was man träumen könnte.
 <!-- Oli's stage -->
 
 ## Was passiert im Backend?
-<aside class="notes">
-Am Backend überprüft der ilivalidator den Datensatz. Die QGIS-Daten liegen in einer Datenbank vor (PostGIS oder Geopackage) wobei das physische Schema durch ili2db erstellt wurde. Dadurch kennt sich der ilivalidator darin aus.
 
-![ili2db](assets/ili2db_erd_sample.png) 
-  
+☑️ Datenbank: PostGIS, Geopackage / ili2db erstellt physisches Schema
+
+☑️ ilivalidator erkennt daraus alle Modell-Merkmale
+
+☑️ Konfig. Möglichkeit für Verschärfungen/Abschwächungen
+
+☑️ Full-Set / Baskets - Validierung
+
+☑️ First pass & Second pass
+
+➡️ Valid y/n und Protokollfiles
+
+
+
+<aside class="notes">
+Am Backend überprüft der ilivalidator den Datensatz. Die QGIS-Daten liegen in einer Datenbank vor (PostGIS oder Geopackage) wobei das physische Schema durch ili2db erstellt wurde. Dadurch kennt sich der ilivalidator darin aus. 
 - Der ilivalidator erkennt alle Merkmale des Modells wie Klassen, Attribute und Beziehungen zwischen den Klassen. Dadurch kann er die Daten gegen die INTERLIS-Regeln prüfen.
 - Die Prüfung geschieht typischerweise in 2 "runs": In Run#1 passiert die Prüfung Datensatz-für-Datensatz / in Run#2 prüft der ilivalidator dann Datensätze gegeneinander (zB. für Topologiechecks oder Objektbzeiehungen)
 - Eine Prüfung kann über die vollständige Datenbank passieren oder als Option, nur auf sogenannte Baskets (bzw. Datasets)
@@ -111,15 +123,6 @@ Am Backend überprüft der ilivalidator den Datensatz. Die QGIS-Daten liegen in 
 - Die Resultate stellen drei Outputs dar: 1. Validierung erfolgreich Ja/nein  2. Protokoll-Datei mit allen Warnungen und Fehlern  3. GIS-fähige Protokolldatei mit verorteten Fehlern
   
 </aside>
-
-```
-Error: line 0: Bodeneignungskarte_V1_2.Boden_Eignung_Karte.Boden_Area: tid 11202: Attribute Kartierungseinheit has wrong number of values
-Info: second validation pass... Info: validate AREA
-Bodeneignungskarte_V1_2.Boden_Eignung_Karte.Boden_Area.Geometrie...
-Error: polygons overlay tid1 1685, tid2 11202 Error: failed to validate AREA
-Bodeneignungskarte_V1_2.Boden_Eignung_Karte.Boden_Area.Geometrie
-Error: ...validate failed
-```
 
 ---
 
@@ -152,24 +155,19 @@ Deshalb die Idee der Subset validierung.
 ## PoC Live Validierung 🎥
 
 <!-- Oli's stage -->
-
-<aside class="notes">
+ 
+Ziele & Erkenntnisse des Proof-Of-Concepts:
   
-Ziele des Proof-Of-Concepts:
-  
-- Validierung direkt bei der Speicherung der Layeränderungen und nur des Subsets.
+- Validierung direkt bei der Speicherung
 - Bildung des Subsets aus dem editierten Objekt und allen topologischen Nachbarn
 - Validierung des Subsets
-  
-</aside>
 
 <video controls="controls">
 <source src="assets/poc.webm" type="video/mp4">
 </video>
 
-<aside class="notes">
   
-Erkenntnisse:
+<aside class="notes">
   
 - Prinzipiell ein funktionierendes Konzept: Zeitbedarf kann extrem reduziert werden > Ansatz in Produktionsumgebungen für aktuell validierten Datenbestand
 - Validierung der Attribut-Eigenschaften, Datentypen und MANDATORY und EXISTENCE CONSTRAINTS
@@ -178,8 +176,20 @@ Erkenntnisse:
   - Umgang mit Datensätzen aus nicht-geometrischen Klassen
   - Umgang mit Constraints wie SET, PLAUSIBILIY CONSTRAINTS
 - Erweiterung des ilivalidators mit einem sog. Subset-Parameter (Array von Objekt-Identifikatoren (OID) o.ä.)   
-  
+
 </aside>
+
+---
+
+## PoC Live Validierung 🎥
+
+<!-- Oli's stage -->
+ 
+Erkenntnisse:
+  
+➡️ Prinzipiell funktionierendes Konzept
+➡️ Einschränkungen (Objektrefs, SET CONSTRAINTS, Objekte ohne Geometrie)
+➡️ Erweiterung des ilivalidators ist möglich
 
 ---
 
