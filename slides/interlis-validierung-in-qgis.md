@@ -99,7 +99,23 @@ Und danach noch einen kleinen Ausblick, von was man träumen könnte.
 
 ## Was passiert im Backend?
 <aside class="notes">
-... das war nun das Frontend im Model Baker Plugin, doch was passiert im Hintergrund?
+Am Backend überprüft der ilivalidator den Datensatz. Die QGIS-Daten liegen in einer Datenbank vor (PostGIS oder Geopackage) wobei das physische Schema durch ili2db erstellt wurde. Dadurch kennt sich der ilivalidator darin aus.
+  ![image](https://github.com/signedav/interlis-validierung-in-qgis/assets/3465512/a3e8891c-2e31-46d1-917c-77a306e79417)
+  
+- Der ilivalidator erkennt alle Merkmale des Modells wie Klassen, Attribute und Beziehungen zwischen den Klassen. Dadurch kann er die Daten gegen die INTERLIS-Regeln prüfen.
+- Die Prüfung geschieht typischerweise in 2 "runs": In Run#1 passiert die Prüfung Datensatz-für-Datensatz / in Run#2 prüft der ilivalidator dann Datensätze gegeneinander (zB. für Topologiechecks oder Objektbzeiehungen)
+- Eine Prüfung kann über die vollständige Datenbank passieren oder als Option, nur auf sogenannte Baskets (bzw. Datasets)
+- Der ilivalidator ermöglicht auch, dass gewisse Prüfungen weggelassen oder verschärfte Regeln berücksichtigt werden.
+- Vorallem Prüfungen im Run#2 sind teilweise sehr aufwändig und benötigen entsprechend Rechenzeit und Ressourcen. Daher kann eine Validierung schnell viel Zeit in Anspruch nehmen.
+- Die Resultate stellen drei Outputs dar: 1. Validierung erfolgreich Ja/nein  2. Protokoll-Datei mit allen Warnungen und Fehlern  3. GIS-fähige Protokolldatei mit verorteten Fehlern
+  
+> Error: line 0: Bodeneignungskarte_V1_2.Boden_Eignung_Karte.Boden_Area: tid 11202: Attribute Kartierungseinheit has wrong number of values
+> Info: second validation pass... Info: validate AREA
+> Bodeneignungskarte_V1_2.Boden_Eignung_Karte.Boden_Area.Geometrie...
+> Error: polygons overlay tid1 1685, tid2 11202 Error: failed to validate AREA
+> Bodeneignungskarte_V1_2.Boden_Eignung_Karte.Boden_Area.Geometrie
+> Error: ...validate failed
+  
 </aside>
 
 ---
