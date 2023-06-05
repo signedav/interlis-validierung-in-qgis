@@ -154,10 +154,13 @@ Deshalb die Idee der Subset validierung.
 <!-- Oli's stage -->
 
 <aside class="notes">
+  
 Ziele des Proof-Of-Concepts:
+  
 - Validierung direkt bei der Speicherung der Layeränderungen und nur des Subsets.
 - Bildung des Subsets aus dem editierten Objekt und allen topologischen Nachbarn
 - Validierung des Subsets
+  
 </aside>
 
 <video controls="controls">
