@@ -159,11 +159,6 @@ Deshalb die Idee der Subset validierung.
 - Validierung direkt bei der Speicherung
 - Bildung des Subsets aus dem editierten Objekt und allen topologischen Nachbarn
 - Validierung des Subsets
-
-<video controls="controls">
-<source src="assets/poc.webm" type="video/mp4">
-</video>
-
   
 <aside class="notes">
   
@@ -196,7 +191,9 @@ Deshalb die Idee der Subset validierung.
 Erkenntnisse:
   
 ➡️ Prinzipiell funktionierendes Konzept
+
 ➡️ Einschränkungen (Objektrefs, SET CONSTRAINTS, Objekte ohne Geometrie)
+
 ➡️ Erweiterung des ilivalidators ist möglich
 
 ---
