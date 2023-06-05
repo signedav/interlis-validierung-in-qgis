@@ -97,6 +97,7 @@ Und danach noch einen kleinen Ausblick, von was man träumen könnte.
 ## Was passiert im Backend?
 <aside class="notes">
 Am Backend überprüft der ilivalidator den Datensatz. Die QGIS-Daten liegen in einer Datenbank vor (PostGIS oder Geopackage) wobei das physische Schema durch ili2db erstellt wurde. Dadurch kennt sich der ilivalidator darin aus.
+
 ![ili2db](assets/ili2db_erd_sample.png) 
   
 - Der ilivalidator erkennt alle Merkmale des Modells wie Klassen, Attribute und Beziehungen zwischen den Klassen. Dadurch kann er die Daten gegen die INTERLIS-Regeln prüfen.
@@ -106,14 +107,16 @@ Am Backend überprüft der ilivalidator den Datensatz. Die QGIS-Daten liegen in 
 - Vorallem Prüfungen im Run#2 sind teilweise sehr aufwändig und benötigen entsprechend Rechenzeit und Ressourcen. Daher kann eine Validierung schnell viel Zeit in Anspruch nehmen.
 - Die Resultate stellen drei Outputs dar: 1. Validierung erfolgreich Ja/nein  2. Protokoll-Datei mit allen Warnungen und Fehlern  3. GIS-fähige Protokolldatei mit verorteten Fehlern
   
-> Error: line 0: Bodeneignungskarte_V1_2.Boden_Eignung_Karte.Boden_Area: tid 11202: Attribute Kartierungseinheit has wrong number of values
-> Info: second validation pass... Info: validate AREA
-> Bodeneignungskarte_V1_2.Boden_Eignung_Karte.Boden_Area.Geometrie...
-> Error: polygons overlay tid1 1685, tid2 11202 Error: failed to validate AREA
-> Bodeneignungskarte_V1_2.Boden_Eignung_Karte.Boden_Area.Geometrie
-> Error: ...validate failed
-  
 </aside>
+
+```
+Error: line 0: Bodeneignungskarte_V1_2.Boden_Eignung_Karte.Boden_Area: tid 11202: Attribute Kartierungseinheit has wrong number of values
+Info: second validation pass... Info: validate AREA
+Bodeneignungskarte_V1_2.Boden_Eignung_Karte.Boden_Area.Geometrie...
+Error: polygons overlay tid1 1685, tid2 11202 Error: failed to validate AREA
+Bodeneignungskarte_V1_2.Boden_Eignung_Karte.Boden_Area.Geometrie
+Error: ...validate failed
+```
 </script></section><section  data-markdown><script type="text/template">
 <!-- Dave's stage -->
 
@@ -142,6 +145,11 @@ Deshalb die Idee der Subset validierung.
 ## PoC Live Validierung 🎥
 
 <!-- Oli's stage -->
+
+<video controls="controls">
+<source src="assets/poc.webm" type="video/mp4">
+</video>
+
 </script></section><section  data-markdown><script type="text/template">
 ## Model Baker Frontend
 </br>
