@@ -155,8 +155,6 @@ Deshalb die Idee der Subset validierung.
 ## PoC Live Validierung 🎥
 
 <!-- Oli's stage -->
- 
-Ziele & Erkenntnisse des Proof-Of-Concepts:
   
 - Validierung direkt bei der Speicherung
 - Bildung des Subsets aus dem editierten Objekt und allen topologischen Nachbarn
@@ -178,6 +176,16 @@ Ziele & Erkenntnisse des Proof-Of-Concepts:
 - Erweiterung des ilivalidators mit einem sog. Subset-Parameter (Array von Objekt-Identifikatoren (OID) o.ä.)   
 
 </aside>
+
+---
+
+## PoC Live Validierung 🎥
+
+<!-- Oli's stage -->
+  
+<video controls="controls">
+<source src="assets/poc.webm" type="video/mp4">
+</video>
 
 ---
 
