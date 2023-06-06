@@ -105,9 +105,9 @@ Und danach noch einen kleinen Ausblick, von was man träumen könnte.
 
 ☑️ Konfig. Möglichkeit für Verschärfungen/Abschwächungen
 
-☑️ Full-Set / Baskets - Validierung
+☑️ Full-Set vs. Baskets - Validierung
 
-☑️ First pass & Second pass
+☑️ First pass -> Second pass
 
 ➡️ Valid y/n und Protokollfiles
 
