@@ -152,7 +152,7 @@ Deshalb die Idee der Subset validierung.
 
 ---
 
-## PoC Live Validierung 🎥
+## PoC Live Validierung
 
 <!-- Oli's stage -->
   
@@ -184,7 +184,7 @@ Deshalb die Idee der Subset validierung.
 
 ---
 
-## PoC Live Validierung 🎥
+## PoC Live Validierung
 
 <!-- Oli's stage -->
  
